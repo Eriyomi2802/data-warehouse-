@@ -15,7 +15,7 @@ Les étapes clés sont :
 
 ## 🏗️ Structure du projet
 
-mini_dw_tp1/ ├── dw_example/ # Dossier de sortie des fichiers CSV │ ├── raw_customers.csv │ ├── raw_products.csv │ ├── raw_orders.csv │ ├── dim_date.csv │ ├── dim_product.csv │ ├── dim_customer.csv │ ├── fact_sales.csv │ └── monthly_sales.png ├── src/ │ └── etl/ │ ├── generate_raw.py │ ├── staging.py │ ├── build_dimensions.py │ ├── build_fact_sales.py ├── notebooks/ │ ├── exploration.ipynb │ └── visualisation.ipynb ├── run_all.py ├── requirements.txt └── README.md
+mini_dw_tp1/ ├── dw_example/ # Dossier de sortie des fichiers CSV │ ├── raw_customers.csv │ ├── raw_products.csv │ ├── raw_orders.csv │ ├── dim_date.csv │ ├── dim_product.csv │ ├── dim_customer.csv │ ├── fact_sales.csv │ └── monthly_sales.png ├── src/ │ └── etl/ │ ├── generate_raw.py │ ├── staging.py │ ├── build_dimensions.py │ ├── build_fact_sales.py ├── notebooks/ │ ├── exploration.ipynb │ └── visualisation.ipynb ├── run_all.py ├── requirements.txt 
 
 
 ---
