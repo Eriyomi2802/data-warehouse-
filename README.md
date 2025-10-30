@@ -1,7 +1,80 @@
-# data-warehouse-
-# 🧾 Rapport Final — Mini Data Warehouse TP2
+# Mini Data Warehouse – TP1 : Simulation de ventes
 
-## Réalisé par : CAKPOSSE Eriyomi Phestèce Chancelle-Hélène
+## 🎯 Objectifs pédagogiques
+
+Ce projet a pour but de construire un mini Data Warehouse orienté ventes, en simulant un pipeline complet depuis des données brutes jusqu’à un schéma en étoile exploitable pour l’analyse.  
+Les étapes clés sont :
+
+- Générer des données RAW (clients, produits, commandes)
+- Nettoyer et normaliser les données (staging)
+- Construire les dimensions : date, produit, client
+- Construire la table de faits `fact_sales` avec KPIs (montant, coût, marge)
+- Réaliser des agrégations et visualiser le chiffre d’affaires mensuel
+
+---
+
+## 🏗️ Structure du projet
+
+mini_dw_tp1/ ├── dw_example/ # Dossier de sortie des fichiers CSV │ ├── raw_customers.csv │ ├── raw_products.csv │ ├── raw_orders.csv │ ├── dim_date.csv │ ├── dim_product.csv │ ├── dim_customer.csv │ ├── fact_sales.csv │ └── monthly_sales.png ├── src/ │ └── etl/ │ ├── generate_raw.py │ ├── staging.py │ ├── build_dimensions.py │ ├── build_fact_sales.py ├── notebooks/ │ ├── exploration.ipynb │ └── visualisation.ipynb ├── run_all.py ├── requirements.txt └── README.md
+
+
+---
+
+## ⚙️ Étapes du pipeline
+
+### 1. Génération des données RAW
+- 120 clients, 60 produits, 2500 lignes de commande
+- Export CSV : `raw_customers.csv`, `raw_products.csv`, `raw_orders.csv`
+
+### 2. Staging (nettoyage)
+- Standardisation des emails, pays, catégories, marques
+- Conversion des dates
+- Préparation des données pour les dimensions
+
+### 3. Dimensions
+- `dim_date` : extraite des dates de commande
+- `dim_product` : produits uniques avec SK
+- `dim_customer` : clients uniques avec SK
+
+### 4. Table de faits `fact_sales`
+- Jointures avec les dimensions
+- Calculs : montant = quantité × prix, coût, marge
+- Colonnes : `order_id`, `order_line_id`, `date_sk`, `product_sk`, `customer_sk`, `quantity`, `unit_price`, `amount`, `cost`, `margin`
+
+---
+
+## 📊 Analyses et visualisations
+
+- **Chiffre d’affaires mensuel** : agrégation par mois et année
+- **Top 10 produits** : classement par chiffre d’affaires
+- **Graphique** : `monthly_sales.png` généré avec matplotlib
+
+---
+
+## ▶️ Exécution du pipeline
+
+1. Installer les dépendances :
+   ```bash
+   pip install -r requirements.txt
+2. Lancer le pipeline complet
+   python run_all.py
+3. Ouvrir le notebook pour explorer les résultats
+    ```bash
+   jupyter notebook
+
+## 🧠 Concepts mobilisés
+
+- Simulation réaliste de données transactionnelles  
+- Nettoyage et enrichissement avec pandas  
+- Modélisation en étoile (dimensions + fait)  
+- Calculs de KPIs : montant, coût, marge  
+- Visualisation avec matplotlib  
+
+
+
+# data-warehouse-
+# 🧾 Mini Data Warehouse TP2
+
 
 
 ## 🎯 Objectif du projet
@@ -94,7 +167,11 @@ Ce projet m’a permis de consolider mes compétences en :
 
 Il constitue une base solide pour aborder des projets industriels plus complexes en Big Data et Intelligence Artificielle.
 
+## ✨ Auteur
 
+Projet réalisé par **Helene Cakposse**  
+*MsC 2 DATA ENGINEERING*  
+ECE Paris
 
 ```python
 
